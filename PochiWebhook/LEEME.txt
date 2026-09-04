@@ -1,0 +1,15 @@
+POCHI WEBHOOK - SIN SUPABASE
+
+Esta versión usa Discord directamente desde GitHub Pages y evita el POST JSON que suele fallar por CORS.
+
+SUBIDA:
+1. Sube la carpeta PochiWebhook completa dentro de la raíz del repositorio PochiDev.
+2. Espera a que GitHub Pages termine el despliegue.
+3. Perfil: https://pochidev1.github.io/PochiDev/PochiWebhook/
+4. Prueba: https://pochidev1.github.io/PochiDev/PochiWebhook/PROBAR-WEBHOOK.html
+
+Cuando una persona pulse "clic" en el perfil, se intentará enviar la visita al webhook configurado en app-config.js.
+
+IMPORTANTE:
+- Al no usar backend, el webhook queda visible públicamente en app-config.js.
+- Si el webhook fue eliminado o regenerado en Discord, reemplaza discordWebhookUrl por el webhook nuevo.

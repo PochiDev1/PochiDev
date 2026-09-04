@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Probar webhook · Pochi</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#080808;color:#fff;display:grid;place-items:center;min-height:100vh;margin:0}.box{max-width:520px;padding:28px;border:1px solid #333;border-radius:14px;background:#111;text-align:center}button{padding:12px 18px;border:0;border-radius:10px;font-weight:700;cursor:pointer}#s{margin-top:15px;color:#b8ffc0}a{color:#b8ffc0}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>Prueba del webhook</h1>
+<p>Pulsa el botón y revisa el canal de Discord.</p>
+<button id="test">Enviar prueba</button>
+<div id="s"></div>
+<p><a href="./">Volver al perfil</a></p>
+</div>
+<script src="app-config.js"></script>
+<script src="visit-logger.js"></script>
+<script>
+document.querySelector('#test').addEventListener('click', async () => {
+  document.querySelector('#s').textContent = 'Enviando…';
+  const ok = await window.PochiVisits.saveVisit({test:true});
+  document.querySelector('#s').textContent = ok ? 'Solicitud enviada. Revisa Discord.' : 'No se pudo iniciar el envío.';
+});
+</script>
+</body>
+</html>
